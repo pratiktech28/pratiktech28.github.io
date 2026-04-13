@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+Sitemap: https://pratiktech28.github.io/sitemap.xml
+Crawl-delay: 1
+
+# Disallow specific paths if needed (example)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Google-specific rules
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Bing-specific rules
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1

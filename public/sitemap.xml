@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://pratiktech28.github.io/</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>1.00</priority>
+  </url>
+
+  <url>
+    <loc>https://github.com/pratiktech28/gprmax_Containerized</loc>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://github.com/pratiktech28/gprmax_kuber_simulations</loc>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://github.com/pratiktech28/gprmax_Ascan</loc>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://github.com/pratiktech28/gprmax_material_property_check</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://github.com/pratiktech28/gprmax_integration_test</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://github.com/pratiktech28/gprmax_geometry_check</loc>
+    <priority>0.80</priority>
+  </url>
+</urlset>
