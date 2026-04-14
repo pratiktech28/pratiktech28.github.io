@@ -686,30 +686,6 @@ export default function Portfolio() {
     }
   ]
 
-      {/* GSoC Proposal Section */}
-      <section id="proposal" className="py-20 bg-muted/30" ref={observe('proposal-section')}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-4 mb-12" style={{
-            opacity: visibleElements.has('proposal-section') ? 1 : 0,
-            transform: visibleElements.has('proposal-section') ? 'translateY(0)' : 'translateY(40px)',
-            transition: 'all 0.6s ease-out'
-          }}>
-            <p className="text-primary text-sm font-semibold">GSoC&apos;26 Initiative</p>
-            <h2 className="text-4xl font-bold">GSoC&apos;26 Proposal Research</h2>
-            <p className="text-muted-foreground">The Trident Pipeline: Cloud-Native CI/CD for Physics-Driven Simulation Testing</p>
-            <div className="h-1 w-16 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
-          </div>
-
-          <div style={{
-            opacity: visibleElements.has('proposal-section') ? 1 : 0,
-            transform: visibleElements.has('proposal-section') ? 'translateY(0)' : 'translateY(40px)',
-            transition: 'all 0.6s ease-out 0.1s'
-          }}>
-            <ProposalViewer />
-          </div>
-        </div>
-      </section>
-
       {/* Education Section */}
       <section id="education" className="py-20" ref={observe('education-section')}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
