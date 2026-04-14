@@ -344,7 +344,7 @@ export default function Portfolio() {
               </h1>
 
               <p className="text-xl md:text-2xl font-semibold text-primary">
-                MLOps Engineer | LLM Deployment & Kubernetes Orchestration
+                MLOps Engineer | LLM Deployment & Kubernetes Orchestration | Project's Showcase Portfolio
               </p>
 
               <p className="text-lg leading-relaxed text-muted-foreground">
@@ -641,6 +641,50 @@ export default function Portfolio() {
           </div>
         </div>
       </section>
+       const gsocProjects = [
+    {
+      title: 'gprMax Containerized Infrastructure',
+      description: 'End-to-end Dockerization of physics-driven simulation engines for cloud-native deployment.',
+      tags: ['Docker', 'Infrastructure', 'MLOps'],
+      link: 'https://github.com/pratiktech28/gprmax_Containerized.git'
+    },
+    {
+      title: 'GSoC Worker Automation',
+      description: 'Automated task distribution and worker management system for high-scale GSoC project tasks.',
+      tags: ['CI/CD', 'Automation', 'Workflow'],
+      link: 'https://github.com/pratiktech28/gsoc_worke.git'
+    },
+    {
+      title: 'KubeSim: Kubernetes Physics Simulations',
+      description: 'Large-scale simulation orchestration using Kubernetes clusters (GKE/EKS) for massive parallel processing.',
+      tags: ['Kubernetes', 'Scalability', 'Orchestration'],
+      link: 'https://github.com/pratiktech28/gprmax_kuber_simulations.git'
+    },
+    {
+      title: 'A-Scan Signal Processing',
+      description: 'Real-time data visualization and processing unit for GPR simulation output.',
+      tags: ['Signal Processing', 'Python', 'Data Viz'],
+      link: 'https://github.com/pratiktech28/gprmax_Ascan.git'
+    },
+    {
+      title: 'Integration Testing Framework',
+      description: 'Automated regression and integration testing suite ensuring accuracy in simulation updates.',
+      tags: ['Testing', 'QA', 'Automation'],
+      link: 'https://github.com/pratiktech28/gprmax_integration_test.git'
+    },
+    {
+      title: 'Material Property Validation',
+      description: 'System for checking and validating physical material properties within containerized environments.',
+      tags: ['Validation', 'Backend', 'Physics'],
+      link: 'https://github.com/pratiktech28/gprmax_material_property_check.git'
+    },
+    {
+      title: 'Geometry Validation Suite',
+      description: 'Automated geometry checks for complex GPR models before simulation execution.',
+      tags: ['Geometry', 'CI/CD', 'Infrastructure'],
+      link: 'https://github.com/pratiktech28/gprmax_geometry_check.git'
+    }
+  ]
 
       {/* GSoC Proposal Section */}
       <section id="proposal" className="py-20 bg-muted/30" ref={observe('proposal-section')}>
