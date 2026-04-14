@@ -333,24 +333,22 @@ export default function Portfolio() {
             }}>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30">
                 <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
-                <span className="text-sm text-primary font-medium">Available for Global Opportunities</span>
+                <span className="text-sm text-primary font-medium">Available for Opportunities</span>
               </div>
 
-              {/* Updated Headline */}
               <h1 className="text-5xl md:text-6xl font-bold leading-tight">
-                Architecting the Future with{' '}
+                Hi, I&apos;m{' '}
                 <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                   Prateek Sharma
                 </span>
               </h1>
 
-              {/* Updated Sub-headline */}
-              <p className="text-lg text-muted-foreground font-semibold">
-                Infrastructure Cloud Architect | GSoC &apos;26 Contributor @gprMax | Verified by @google | Official Core Contributor @keploy
+              <p className="text-xl md:text-2xl font-semibold text-primary">
+                MLOps Engineer | LLM Deployment & Kubernetes Orchestration
               </p>
 
-              <p className="text-base leading-relaxed text-muted-foreground">
-                Engineering high-availability distributed systems and automated CI/CD pipelines. Currently optimizing computational physics simulations for global scalability while driving shift-left testing methodologies.
+              <p className="text-lg leading-relaxed text-muted-foreground">
+                Optimizing Large Language Models for the edge. Specializing in Linux internals, containerization, and distributed Deep Learning systems.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
@@ -400,7 +398,7 @@ export default function Portfolio() {
                   />
                 </div>
                 <div className="absolute bottom-8 right-8 px-4 py-2 bg-primary rounded-full shadow-lg animate-bounce">
-                  <span className="text-sm font-semibold text-primary-foreground">AI/ML Specialist</span>
+                  <span className="text-sm font-semibold text-primary-foreground">AI/ML Enthusiast</span>
                 </div>
               </div>
             </div>
@@ -412,4 +410,606 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* ... (Rest of the code remains the same as in your page.tsx) */}
+      {/* ... Rest of the sections remain identical ... */}
+      {/* (About, Skills, Experience, Projects, etc.) */}
+      
+      {/* About Section */}
+      <section id="about" className="py-20 bg-muted/30" ref={observe('about-section')}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-12">
+            <div className="text-center space-y-4" style={{
+              opacity: visibleElements.has('about-section') ? 1 : 0,
+              transform: visibleElements.has('about-section') ? 'translateY(0)' : 'translateY(40px)',
+              transition: 'all 0.6s ease-out'
+            }}>
+              <h2 className="text-4xl font-bold">Who I Am</h2>
+              <div className="h-1 w-16 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {stats.map((stat, idx) => (
+                <div
+                  key={idx}
+                  className="group relative"
+                  style={{
+                    opacity: visibleElements.has('about-section') ? 1 : 0,
+                    transform: visibleElements.has('about-section') ? 'translateY(0)' : 'translateY(60px)',
+                    transition: `all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) ${idx * 0.12}s`
+                  }}
+                >
+                  <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl bg-gradient-to-r from-primary/20 to-accent/20"></div>
+                  
+                  <div className="relative p-6 rounded-lg border border-border bg-card/50 backdrop-blur hover:border-primary transition-all duration-300 hover:scale-110 text-center h-full">
+                    <div className="text-5xl mb-3 group-hover:scale-125 transition-transform duration-300 inline-block">{stat.icon}</div>
+                    <div className="text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-2">{stat.value}</div>
+                    <div className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">{stat.label}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+              <div className="p-6 rounded-lg border border-border bg-card/50 backdrop-blur hover:border-primary/50 transition-all hover:scale-105">
+                <h3 className="text-xl font-bold mb-3 text-primary">Passion & Purpose</h3>
+                <p className="text-muted-foreground">
+                  I am a Full-Stack Developer and Open Source Enthusiast with a passion for transforming complex engineering challenges into automated solutions. Currently focused on building CI/CD Pipelines and Automated Testing frameworks for advanced physics engines.
+                </p>
+              </div>
+
+              <div className="p-6 rounded-lg border border-border bg-card/50 backdrop-blur hover:border-primary/50 transition-all hover:scale-105">
+                <h3 className="text-xl font-bold mb-3 text-primary">Vision</h3>
+                <p className="text-muted-foreground">
+                  My vision is to bridge the gap between software engineering and physical simulations by creating scalable, high-performance digital infrastructure. I specialize in containerization technologies, infrastructure automation, and designing robust testing frameworks.
+                </p>
+              </div>
+
+              <div className="p-6 rounded-lg border border-border bg-card/50 backdrop-blur hover:border-primary/50 transition-all hover:scale-105">
+                <h3 className="text-xl font-bold mb-3 text-primary">Experience</h3>
+                <p className="text-muted-foreground">
+                  With hands-on experience in microservices architecture, DevOps practices, and computational physics, I&apos;m committed to open source contributions that advance the engineering community and solve complex infrastructure challenges.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Skills Section */}
+      <section id="skills" className="py-20" ref={observe('skills-section')}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center space-y-4 mb-12" style={{
+            opacity: visibleElements.has('skills-section') ? 1 : 0,
+            transform: visibleElements.has('skills-section') ? 'translateY(0)' : 'translateY(40px)',
+            transition: 'all 0.6s ease-out'
+          }}>
+            <h2 className="text-4xl font-bold">Technical Expertise</h2>
+            <div className="h-1 w-16 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {skills.map((skill, idx) => (
+              <div
+                key={idx}
+                className="group relative"
+                style={{
+                  opacity: visibleElements.has('skills-section') ? 1 : 0,
+                  transform: visibleElements.has('skills-section') ? 'translateY(0)' : 'translateY(60px)',
+                  transition: `all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) ${idx * 0.1}s`
+                }}
+              >
+                <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl bg-gradient-to-br from-primary/20 to-accent/20"></div>
+
+                <div className="relative p-6 rounded-lg border border-border bg-card/50 backdrop-blur hover:border-primary transition-all duration-300 hover:scale-110 hover:shadow-xl">
+                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-accent to-primary rounded-l-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                  <div className="flex items-start gap-3 mb-3">
+                    <Code2 className="text-primary mt-1 group-hover:text-accent group-hover:rotate-12 transition-all duration-300" size={24} />
+                    <div>
+                      <h3 className="text-lg font-bold group-hover:text-primary transition-colors">{skill.title}</h3>
+                      <p className="text-xs text-muted-foreground group-hover:text-foreground/70 transition-colors">{skill.description}</p>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2">
+                    {skill.items.map((item, i) => (
+                      <span
+                        key={i}
+                        className="px-3 py-1 rounded-full bg-primary/10 border border-primary/30 text-xs font-semibold text-primary hover:bg-primary hover:text-primary-foreground transition-all transform hover:scale-110"
+                        style={{
+                          transitionDelay: `${i * 40}ms`
+                        }}
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Experience Section */}
+      <section id="experience" className="py-20 bg-muted/30" ref={observe('experience-section')}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center space-y-4 mb-12" style={{
+            opacity: visibleElements.has('experience-section') ? 1 : 0,
+            transform: visibleElements.has('experience-section') ? 'translateY(0)' : 'translateY(40px)',
+            transition: 'all 0.6s ease-out'
+          }}>
+            <h2 className="text-4xl font-bold">My Journey</h2>
+            <div className="h-1 w-16 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
+          </div>
+
+          <div className="space-y-8 relative">
+            <div className="hidden md:block absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-accent to-primary opacity-20"></div>
+
+            {experience.map((exp, idx) => (
+              <div
+                key={idx}
+                className="group relative"
+                style={{
+                  opacity: visibleElements.has('experience-section') ? 1 : 0,
+                  transform: visibleElements.has('experience-section') ? 'translateY(0)' : 'translateY(60px)',
+                  transition: `all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) ${idx * 0.15}s`
+                }}
+              >
+                <div className="hidden md:block absolute left-0 top-6 w-16 h-16 flex items-center justify-center">
+                  <div className="w-4 h-4 rounded-full bg-primary border-4 border-background absolute left-6 group-hover:scale-150 transition-transform duration-300 shadow-lg shadow-primary/50"></div>
+                </div>
+
+                <div className="md:ml-24 p-6 rounded-lg border border-border bg-card/50 backdrop-blur hover:border-primary transition-all duration-300 hover:shadow-xl group-hover:shadow-primary/20 group-hover:scale-102">
+                  <div className="absolute top-0 left-0 h-1 w-0 bg-gradient-to-r from-primary to-accent rounded-t-lg group-hover:w-full transition-all duration-500"></div>
+
+                  <div className="flex items-start justify-between mb-4 gap-4">
+                    <div className="flex-1">
+                      <h3 className="text-xl font-bold group-hover:text-primary transition-colors">{exp.title}</h3>
+                      <p className="text-primary text-sm font-semibold">{exp.company}</p>
+                    </div>
+                    <span className="text-xs px-4 py-2 rounded-full bg-primary/20 border border-primary/50 text-primary font-bold whitespace-nowrap group-hover:bg-primary/40 transition-all">{exp.duration}</span>
+                  </div>
+
+                  <p className="text-sm text-muted-foreground mb-4 flex items-center gap-2 group-hover:text-foreground transition-colors">
+                    <MapPin size={16} className="text-accent flex-shrink-0" /> {exp.location}
+                  </p>
+
+                  <ul className="space-y-3">
+                    {exp.highlights.map((highlight, i) => (
+                      <li key={i} className="text-sm text-muted-foreground group-hover:text-foreground transition-colors flex gap-3">
+                        <Zap size={16} className="text-primary flex-shrink-0 mt-0.5 group-hover:animate-pulse" />
+                        <span>{highlight}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section id="projects" className="py-20" ref={observe('projects-section')}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center space-y-4 mb-12" style={{
+            opacity: visibleElements.has('projects-section') ? 1 : 0,
+            transform: visibleElements.has('projects-section') ? 'translateY(0)' : 'translateY(40px)',
+            transition: 'all 0.6s ease-out'
+          }}>
+            <h2 className="text-4xl font-bold">Featured Projects</h2>
+            <div className="h-1 w-16 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {projects.map((project, idx) => (
+              <div
+                key={idx}
+                className="group relative"
+                style={{
+                  opacity: visibleElements.has('projects-section') ? 1 : 0,
+                  transform: visibleElements.has('projects-section') ? 'translateY(0)' : 'translateY(60px)',
+                  transition: `all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) ${idx * 0.1}s`
+                }}
+              >
+                <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl bg-gradient-to-r from-primary/30 to-accent/30"></div>
+
+                <div className="relative p-6 rounded-lg border border-border bg-card/50 backdrop-blur hover:border-primary transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer h-full">
+                  <div className="absolute top-0 left-0 w-0 h-1 bg-gradient-to-r from-primary to-accent rounded-t-lg group-hover:w-full transition-all duration-500"></div>
+
+                  <h3 className="text-xl font-bold mb-3 bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent group-hover:to-accent transition-all">{project.title}</h3>
+                  <p className="text-muted-foreground mb-4 group-hover:text-foreground transition-colors">{project.description}</p>
+                  
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag, i) => (
+                      <span
+                        key={i}
+                        className="px-3 py-1 rounded-full bg-primary/10 border border-primary/30 text-xs font-semibold text-primary hover:bg-primary hover:text-primary-foreground transition-all transform hover:scale-110"
+                        style={{
+                          transitionDelay: `${i * 50}ms`
+                        }}
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="absolute -bottom-2 -right-2 w-20 h-20 bg-primary/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* GSoC Proposal Section */}
+      <section id="proposal" className="py-20 bg-muted/30" ref={observe('proposal-section')}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center space-y-4 mb-12" style={{
+            opacity: visibleElements.has('proposal-section') ? 1 : 0,
+            transform: visibleElements.has('proposal-section') ? 'translateY(0)' : 'translateY(40px)',
+            transition: 'all 0.6s ease-out'
+          }}>
+            <p className="text-primary text-sm font-semibold">GSoC&apos;26 Initiative</p>
+            <h2 className="text-4xl font-bold">GSoC&apos;26 Proposal Research</h2>
+            <p className="text-muted-foreground">The Trident Pipeline: Cloud-Native CI/CD for Physics-Driven Simulation Testing</p>
+            <div className="h-1 w-16 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
+          </div>
+
+          <div style={{
+            opacity: visibleElements.has('proposal-section') ? 1 : 0,
+            transform: visibleElements.has('proposal-section') ? 'translateY(0)' : 'translateY(40px)',
+            transition: 'all 0.6s ease-out 0.1s'
+          }}>
+            <ProposalViewer />
+          </div>
+        </div>
+      </section>
+
+      {/* Education Section */}
+      <section id="education" className="py-20" ref={observe('education-section')}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center space-y-4 mb-12" style={{
+            opacity: visibleElements.has('education-section') ? 1 : 0,
+            transform: visibleElements.has('education-section') ? 'translateY(0)' : 'translateY(40px)',
+            transition: 'all 0.6s ease-out'
+          }}>
+            <h2 className="text-4xl font-bold">Academic Background</h2>
+            <div className="h-1 w-16 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {education.map((edu, idx) => (
+              <div
+                key={idx}
+                className="p-6 rounded-lg border border-border bg-card/50 backdrop-blur hover:border-primary transition-all hover:scale-105"
+                style={{
+                  opacity: visibleElements.has('education-section') ? 1 : 0,
+                  transform: visibleElements.has('education-section') ? 'translateY(0)' : 'translateY(40px)',
+                  transition: `all 0.6s ease-out ${idx * 0.1}s`
+                }}
+              >
+                <h3 className="text-lg font-bold mb-2">{edu.degree}</h3>
+                <p className="text-primary text-sm font-semibold mb-1">{edu.specialization}</p>
+                <p className="text-sm text-muted-foreground mb-3">{edu.institution}</p>
+                <p className="text-xs text-muted-foreground mb-3">{edu.duration}</p>
+                <p className="text-xs text-muted-foreground flex items-center gap-2 mb-4">
+                  <MapPin size={14} /> {edu.location}
+                </p>
+                <ul className="space-y-1">
+                  {edu.highlights.map((highlight, i) => (
+                    <li key={i} className="text-xs text-muted-foreground flex gap-2">
+                      <span className="text-primary">•</span> {highlight}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Achievements Section */}
+      <section id="achievements" className="py-20 bg-muted/30" ref={observe('achievements-section')}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center space-y-4 mb-12" style={{
+            opacity: visibleElements.has('achievements-section') ? 1 : 0,
+            transform: visibleElements.has('achievements-section') ? 'translateY(0)' : 'translateY(40px)',
+            transition: 'all 0.6s ease-out'
+          }}>
+            <p className="text-primary text-sm font-semibold">Community Recognition</p>
+            <h2 className="text-4xl font-bold">Infrastructure & Global Milestones</h2>
+            <div className="h-1 w-16 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {achievements.map((achievement, idx) => (
+              <div
+                key={idx}
+                className="group relative"
+                style={{
+                  opacity: visibleElements.has('achievements-section') ? 1 : 0,
+                  transform: visibleElements.has('achievements-section') ? 'translateY(0)' : 'translateY(60px)',
+                  transition: `all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) ${idx * 0.15}s`
+                }}
+              >
+                <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" 
+                     style={{background: `linear-gradient(to right, ${achievement.color === 'from-purple-500 to-pink-500' ? 'rgba(168, 85, 247, 0.3)' : achievement.color === 'from-blue-500 to-cyan-500' ? 'rgba(59, 130, 246, 0.3)' : achievement.color === 'from-orange-500 to-yellow-500' ? 'rgba(249, 115, 22, 0.3)' : 'rgba(34, 197, 94, 0.3)'})`}}>
+                </div>
+
+                <div className="relative p-8 rounded-lg border border-border bg-card/50 backdrop-blur hover:border-primary transition-all duration-300 hover:shadow-2xl hover:scale-105 h-full">
+                  <div className="relative mb-4 inline-block">
+                    <div className="absolute inset-0 rounded-full blur-lg opacity-75 animate-pulse"
+                         style={{background: achievement.color.replace('from-', 'linear-gradient(to right, ').replace(' to-', ', ') + ')'}}>
+                    </div>
+                    <div className="relative text-5xl group-hover:scale-125 transition-transform duration-300">{achievement.badge}</div>
+                  </div>
+
+                  <h3 className="text-xl font-bold mb-3 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent group-hover:scale-105 transition-transform origin-left">{achievement.title}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed group-hover:text-foreground transition-colors">{achievement.description}</p>
+
+                  <div className="mt-6 flex items-center justify-between">
+                    <div className="w-1 h-8 bg-gradient-to-b from-primary to-accent rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <span className="text-3xl opacity-20 group-hover:opacity-100 transition-opacity animate-bounce">{achievement.icon}</span>
+                  </div>
+
+                  <div className="absolute inset-0 rounded-lg border-2 border-transparent group-hover:border-primary transition-colors duration-300 opacity-0 group-hover:opacity-100 pointer-events-none" 
+                       style={{borderImage: 'linear-gradient(45deg, var(--color-primary), var(--color-accent), var(--color-primary)) 1'}}></div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-16 max-w-4xl mx-auto">
+            <div className="p-8 rounded-lg border border-border bg-gradient-to-r from-primary/10 to-accent/10 backdrop-blur"
+                 style={{
+                   opacity: visibleElements.has('achievements-section') ? 1 : 0,
+                   transform: visibleElements.has('achievements-section') ? 'translateY(0)' : 'translateY(60px)',
+                   transition: 'all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.6s'
+                 }}>
+              <h3 className="text-2xl font-bold mb-4 text-center">My Technical Journey</h3>
+              <p className="text-muted-foreground leading-relaxed text-center">
+                These badges aren&apos;t just icons—they are the metrics of my 8.2 average Google Search position and my status as an Infrastructure Cloud Architect. They represent a continuous validation of my expertise in architecting resilient, hyperscale systems that power global computational workflows. From surgical issue resolution to mentoring architects on the world stage, my journey reflects a commitment to excellence in cloud-native infrastructure and open-source innovation.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Resume Section */}
+      <section id="resume" className="py-20" ref={observe('resume-section')}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center space-y-4 mb-12" style={{
+            opacity: visibleElements.has('resume-section') ? 1 : 0,
+            transform: visibleElements.has('resume-section') ? 'translateY(0)' : 'translateY(40px)',
+            transition: 'all 0.6s ease-out'
+          }}>
+            <h2 className="text-4xl font-bold">My Professional Documents</h2>
+            <p className="text-muted-foreground">Check out my resume and project proposals</p>
+            <div className="h-1 w-16 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
+          </div>
+
+          <div style={{
+            opacity: visibleElements.has('resume-section') ? 1 : 0,
+            transform: visibleElements.has('resume-section') ? 'translateY(0)' : 'translateY(40px)',
+            transition: 'all 0.6s ease-out 0.1s'
+          }}>
+            <ResumeViewer />
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-20 bg-muted/30" ref={observe('contact-section')}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center space-y-4 mb-12" style={{
+            opacity: visibleElements.has('contact-section') ? 1 : 0,
+            transform: visibleElements.has('contact-section') ? 'translateY(0)' : 'translateY(40px)',
+            transition: 'all 0.6s ease-out'
+          }}>
+            <h2 className="text-4xl font-bold">Get In Touch</h2>
+            <p className="text-muted-foreground">Have a question or enquiry? I&apos;d love to hear from you!</p>
+            <div className="h-1 w-16 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+            <div className="space-y-6">
+              <div
+                className="p-6 rounded-lg border border-border bg-card/50 backdrop-blur hover:border-primary transition-all hover:scale-105 group"
+                style={{
+                  opacity: visibleElements.has('contact-section') ? 1 : 0,
+                  transform: visibleElements.has('contact-section') ? 'translateY(0)' : 'translateY(40px)',
+                  transition: 'all 0.6s ease-out'
+                }}
+              >
+                <Mail className="w-8 h-8 text-primary mb-3 group-hover:animate-pulse" />
+                <h3 className="font-bold mb-2">Email</h3>
+                <a href="mailto:pratiktech28@gmail.com" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                  pratiktech28@gmail.com
+                </a>
+              </div>
+
+              <div
+                className="p-6 rounded-lg border border-border bg-card/50 backdrop-blur hover:border-primary transition-all hover:scale-105 group"
+                style={{
+                  opacity: visibleElements.has('contact-section') ? 1 : 0,
+                  transform: visibleElements.has('contact-section') ? 'translateY(0)' : 'translateY(40px)',
+                  transition: 'all 0.6s ease-out 0.1s'
+                }}
+              >
+                <Phone className="w-8 h-8 text-primary mb-3 group-hover:animate-pulse" />
+                <h3 className="font-bold mb-2">Phone</h3>
+                <a href="tel:+918273723090" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                  +91 8273723090
+                </a>
+              </div>
+
+              <div
+                className="p-6 rounded-lg border border-border bg-card/50 backdrop-blur hover:border-primary transition-all hover:scale-105 group"
+                style={{
+                  opacity: visibleElements.has('contact-section') ? 1 : 0,
+                  transform: visibleElements.has('contact-section') ? 'translateY(0)' : 'translateY(40px)',
+                  transition: 'all 0.6s ease-out 0.2s'
+                }}
+              >
+                <MapPin className="w-8 h-8 text-primary mb-3 group-hover:animate-pulse" />
+                <h3 className="font-bold mb-2">Location</h3>
+                <p className="text-muted-foreground text-sm">Indore, Madhya Pradesh, India</p>
+              </div>
+            </div>
+
+            <form onSubmit={handleFormSubmit} className="space-y-4" style={{
+              opacity: visibleElements.has('contact-section') ? 1 : 0,
+              transform: visibleElements.has('contact-section') ? 'translateY(0)' : 'translateY(40px)',
+              transition: 'all 0.6s ease-out 0.2s'
+            }}>
+              <div>
+                <label className="block text-sm font-medium mb-2">Your Name *</label>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleFormChange}
+                  placeholder="John Doe"
+                  required
+                  className="w-full px-4 py-2 rounded-lg bg-card border border-border focus:border-primary focus:outline-none transition-colors"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium mb-2">Your Email *</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleFormChange}
+                  placeholder="john@example.com"
+                  required
+                  className="w-full px-4 py-2 rounded-lg bg-card border border-border focus:border-primary focus:outline-none transition-colors"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium mb-2">Subject *</label>
+                <input
+                  type="text"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleFormChange}
+                  placeholder="Project Inquiry"
+                  required
+                  className="w-full px-4 py-2 rounded-lg bg-card border border-border focus:border-primary focus:outline-none transition-colors"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium mb-2">Message *</label>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleFormChange}
+                  placeholder="I'd like to discuss..."
+                  required
+                  rows={5}
+                  className="w-full px-4 py-2 rounded-lg bg-card border border-border focus:border-primary focus:outline-none transition-colors resize-none"
+                />
+              </div>
+
+              {formMessage && (
+                <div className={`p-3 rounded-lg flex items-center gap-2 ${formMessage.includes('✓') ? 'bg-green-500/10 text-green-400 border border-green-500/30' : 'bg-red-500/10 text-red-400 border border-red-500/30'}`}>
+                  <AlertCircle size={18} />
+                  <span className="text-sm">{formMessage}</span>
+                </div>
+              )}
+
+              <button
+                type="submit"
+                disabled={formSubmitting}
+                className="w-full px-6 py-3 bg-gradient-to-r from-primary to-accent text-primary-foreground rounded-lg font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed group"
+              >
+                <Send size={20} className="group-hover:translate-x-1 transition-transform" />
+                {formSubmitting ? 'Sending...' : 'Send Enquiry'}
+              </button>
+            </form>
+          </div>
+
+          <div className="border-t border-border pt-12">
+            <div className="text-center mb-8">
+              <p className="text-muted-foreground mb-4 text-lg">Connect with me on social platforms</p>
+            </div>
+            
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-4 max-w-6xl mx-auto">
+              <a href="https://x.com/ipratik_sharma" target="_blank" rel="noopener noreferrer" className="p-4 rounded-lg bg-muted hover:bg-blue-500/20 hover:border-blue-500 border border-border transition-all hover:scale-110 group text-center" title="Twitter">
+                <Twitter size={24} className="mx-auto mb-2 group-hover:text-blue-400" />
+                <span className="text-xs text-muted-foreground group-hover:text-foreground transition-colors">Twitter</span>
+              </a>
+              <a href="https://www.instagram.com/pratiktech28/" target="_blank" rel="noopener noreferrer" className="p-4 rounded-lg bg-muted hover:bg-pink-500/20 hover:border-pink-500 border border-border transition-all hover:scale-110 group text-center" title="Instagram">
+                <Instagram size={24} className="mx-auto mb-2 group-hover:text-pink-400" />
+                <span className="text-xs text-muted-foreground group-hover:text-foreground transition-colors">Instagram</span>
+              </a>
+              <a href="https://github.com/pratiktech28" target="_blank" rel="noopener noreferrer" className="p-4 rounded-lg bg-muted hover:bg-orange-500/20 hover:border-orange-500 border border-border transition-all hover:scale-110 group text-center" title="GitHub">
+                <Github size={24} className="mx-auto mb-2 group-hover:text-orange-400" />
+                <span className="text-xs text-muted-foreground group-hover:text-foreground transition-colors">GitHub</span>
+              </a>
+              <a href="https://www.linkedin.com/in/prateeksharma2807/" target="_blank" rel="noopener noreferrer" className="p-4 rounded-lg bg-muted hover:bg-blue-600/20 hover:border-blue-600 border border-border transition-all hover:scale-110 group text-center" title="LinkedIn">
+                <Linkedin size={24} className="mx-auto mb-2 group-hover:text-blue-500" />
+                <span className="text-xs text-muted-foreground group-hover:text-foreground transition-colors">LinkedIn</span>
+              </a>
+              <a href="https://www.kaggle.com/pratiktech28" target="_blank" rel="noopener noreferrer" className="p-4 rounded-lg bg-muted hover:bg-blue-400/20 hover:border-blue-400 border border-border transition-all hover:scale-110 group text-center" title="Kaggle">
+                <Code2 size={24} className="mx-auto mb-2 group-hover:text-blue-300" />
+                <span className="text-xs text-muted-foreground group-hover:text-foreground transition-colors">Kaggle</span>
+              </a>
+              <a href="https://discord.com/users/pratiktech28" target="_blank" rel="noopener noreferrer" className="p-4 rounded-lg bg-muted hover:bg-indigo-500/20 hover:border-indigo-500 border border-border transition-all hover:scale-110 group text-center" title="Discord">
+                <Zap size={24} className="mx-auto mb-2 group-hover:text-indigo-400" />
+                <span className="text-xs text-muted-foreground group-hover:text-foreground transition-colors">Discord</span>
+              </a>
+              <a href="mailto:pratiktech28@gmail.com" className="p-4 rounded-lg bg-muted hover:bg-red-500/20 hover:border-red-500 border border-border transition-all hover:scale-110 group text-center" title="Email">
+                <Mail size={24} className="mx-auto mb-2 group-hover:text-red-400" />
+                <span className="text-xs text-muted-foreground group-hover:text-foreground transition-colors">Email</span>
+              </a>
+              <a href="tel:+918273723090" className="p-4 rounded-lg bg-muted hover:bg-green-500/20 hover:border-green-500 border border-border transition-all hover:scale-110 group text-center" title="Phone">
+                <Phone size={24} className="mx-auto mb-2 group-hover:text-green-400" />
+                <span className="text-xs text-muted-foreground group-hover:text-foreground transition-colors">Phone</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-border py-12 bg-gradient-to-b from-muted/50 to-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <div>
+              <h4 className="font-bold mb-3">About</h4>
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                MLOps Engineer & GSoC 2026 Contributor. Building scalable deep learning infrastructure with a passion for open source.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-bold mb-3">Quick Links</h4>
+              <ul className="space-y-2 text-muted-foreground text-sm">
+                <li><a href="#about" className="hover:text-primary transition-colors">About</a></li>
+                <li><a href="#projects" className="hover:text-primary transition-colors">Projects</a></li>
+                <li><a href="#experience" className="hover:text-primary transition-colors">Experience</a></li>
+                <li><a href="#contact" className="hover:text-primary transition-colors">Contact</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-bold mb-3">Contact</h4>
+              <ul className="space-y-2 text-muted-foreground text-sm">
+                <li><a href="mailto:pratiktech28@gmail.com" className="hover:text-primary transition-colors">Email</a></li>
+                <li><a href="tel:+918273723090" className="hover:text-primary transition-colors">+91 8273723090</a></li>
+                <li><p>Indore, Madhya Pradesh, India</p></li>
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-border pt-8 text-center text-muted-foreground">
+            <p className="mb-4">Made with <span className="text-red-500 animate-pulse">❤️</span> © 2026 - Prateek Sharma</p>
+            <p className="text-xs">All rights reserved. Built with Next.js & Tailwind CSS</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  )
+}
