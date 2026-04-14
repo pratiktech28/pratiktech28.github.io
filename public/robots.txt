@@ -1,18 +1,9 @@
-User-agent: *
-Allow: /
-Sitemap: https://v0-portfolio-build-olive-three.vercel.app/sitemap.xml
-Crawl-delay: 1
-
-# Disallow specific paths if needed (example)
-# Disallow: /admin/
-# Disallow: /private/
-
-# Google-specific rules
-User-agent: Googlebot
-Allow: /
-Crawl-delay: 0
-
-# Bing-specific rules
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 1
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://v0-portfolio-build-olive-three.vercel.app/</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>
