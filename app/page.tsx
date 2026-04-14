@@ -3,7 +3,6 @@
 import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { Menu, X, ChevronDown, Github, Linkedin, Mail, Phone, MapPin, ExternalLink, Download, Code2, Zap, Twitter, Instagram, Send, AlertCircle } from 'lucide-react'
-import { motion } from 'framer-motion'
 import ResumeViewer from '@/components/ResumeViewer'
 import ProposalViewer from '@/components/ProposalViewer'
 
@@ -426,33 +425,23 @@ export default function Portfolio() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {stats.map((stat, idx) => (
-                <motion.div
+                <div
                   key={idx}
                   className="group relative"
-                  initial={{ opacity: 0, y: 60 }}
-                  animate={visibleElements.has('about-section') ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
-                  transition={{ duration: 0.7, delay: idx * 0.12, ease: [0.34, 1.56, 0.64, 1] }}
-                  whileHover={{ scale: 1.1 }}
+                  style={{
+                    opacity: visibleElements.has('about-section') ? 1 : 0,
+                    transform: visibleElements.has('about-section') ? 'translateY(0)' : 'translateY(60px)',
+                    transition: `all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) ${idx * 0.12}s`
+                  }}
                 >
-                  <motion.div 
-                    className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 blur-xl bg-gradient-to-r from-primary/20 to-accent/20"
-                    initial={{ opacity: 0 }}
-                    whileHover={{ opacity: 1 }}
-                    transition={{ duration: 0.5 }}
-                  ></motion.div>
+                  <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl bg-gradient-to-r from-primary/20 to-accent/20"></div>
                   
-                  <div className="relative p-6 rounded-lg border border-border bg-card/50 backdrop-blur hover:border-primary transition-all duration-300 text-center h-full">
-                    <motion.div 
-                      className="text-5xl mb-3 inline-block"
-                      whileHover={{ scale: 1.25 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      {stat.icon}
-                    </motion.div>
+                  <div className="relative p-6 rounded-lg border border-border bg-card/50 backdrop-blur hover:border-primary transition-all duration-300 hover:scale-110 text-center h-full">
+                    <div className="text-5xl mb-3 group-hover:scale-125 transition-transform duration-300 inline-block">{stat.icon}</div>
                     <div className="text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-2">{stat.value}</div>
                     <div className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">{stat.label}</div>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
 
@@ -496,23 +485,19 @@ export default function Portfolio() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {skills.map((skill, idx) => (
-              <motion.div
+              <div
                 key={idx}
                 className="group relative"
-                initial={{ opacity: 0, y: 60 }}
-                animate={visibleElements.has('skills-section') ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
-                transition={{ duration: 0.7, delay: idx * 0.1, ease: [0.34, 1.56, 0.64, 1] }}
-                whileHover={{ scale: 1.1, boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }}
+                style={{
+                  opacity: visibleElements.has('skills-section') ? 1 : 0,
+                  transform: visibleElements.has('skills-section') ? 'translateY(0)' : 'translateY(60px)',
+                  transition: `all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) ${idx * 0.1}s`
+                }}
               >
                 {/* Animated glow background */}
-                <motion.div 
-                  className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 blur-xl bg-gradient-to-br from-primary/20 to-accent/20"
-                  initial={{ opacity: 0 }}
-                  whileHover={{ opacity: 1 }}
-                  transition={{ duration: 0.5 }}
-                ></motion.div>
+                <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl bg-gradient-to-br from-primary/20 to-accent/20"></div>
 
-                <div className="relative p-6 rounded-lg border border-border bg-card/50 backdrop-blur hover:border-primary transition-all duration-300 hover:shadow-xl">
+                <div className="relative p-6 rounded-lg border border-border bg-card/50 backdrop-blur hover:border-primary transition-all duration-300 hover:scale-110 hover:shadow-xl">
                   {/* Left border accent */}
                   <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-accent to-primary rounded-l-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
@@ -538,7 +523,7 @@ export default function Portfolio() {
                     ))}
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -561,24 +546,21 @@ export default function Portfolio() {
             <div className="hidden md:block absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-accent to-primary opacity-20"></div>
 
             {experience.map((exp, idx) => (
-              <motion.div
+              <div
                 key={idx}
                 className="group relative"
-                initial={{ opacity: 0, y: 60 }}
-                animate={visibleElements.has('experience-section') ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
-                transition={{ duration: 0.7, delay: idx * 0.15, ease: [0.34, 1.56, 0.64, 1] }}
-                whileHover={{ scale: 1.02 }}
+                style={{
+                  opacity: visibleElements.has('experience-section') ? 1 : 0,
+                  transform: visibleElements.has('experience-section') ? 'translateY(0)' : 'translateY(60px)',
+                  transition: `all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) ${idx * 0.15}s`
+                }}
               >
                 {/* Timeline dot */}
                 <div className="hidden md:block absolute left-0 top-6 w-16 h-16 flex items-center justify-center">
-                  <motion.div 
-                    className="w-4 h-4 rounded-full bg-primary border-4 border-background absolute left-6 shadow-lg shadow-primary/50"
-                    whileHover={{ scale: 1.5 }}
-                    transition={{ duration: 0.3 }}
-                  ></motion.div>
+                  <div className="w-4 h-4 rounded-full bg-primary border-4 border-background absolute left-6 group-hover:scale-150 transition-transform duration-300 shadow-lg shadow-primary/50"></div>
                 </div>
 
-                <div className="md:ml-24 p-6 rounded-lg border border-border bg-card/50 backdrop-blur hover:border-primary transition-all duration-300 hover:shadow-xl group-hover:shadow-primary/20">
+                <div className="md:ml-24 p-6 rounded-lg border border-border bg-card/50 backdrop-blur hover:border-primary transition-all duration-300 hover:shadow-xl group-hover:shadow-primary/20 group-hover:scale-102">
                   {/* Animated top accent */}
                   <div className="absolute top-0 left-0 h-1 w-0 bg-gradient-to-r from-primary to-accent rounded-t-lg group-hover:w-full transition-all duration-500"></div>
 
@@ -603,7 +585,7 @@ export default function Portfolio() {
                     ))}
                   </ul>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -623,23 +605,19 @@ export default function Portfolio() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projects.map((project, idx) => (
-              <motion.div
+              <div
                 key={idx}
                 className="group relative"
-                initial={{ opacity: 0, y: 60 }}
-                animate={visibleElements.has('projects-section') ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
-                transition={{ duration: 0.7, delay: idx * 0.1, ease: [0.34, 1.56, 0.64, 1] }}
-                whileHover={{ scale: 1.05, boxShadow: '0 30px 60px rgba(0,0,0,0.3)' }}
+                style={{
+                  opacity: visibleElements.has('projects-section') ? 1 : 0,
+                  transform: visibleElements.has('projects-section') ? 'translateY(0)' : 'translateY(60px)',
+                  transition: `all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) ${idx * 0.1}s`
+                }}
               >
                 {/* Animated glow background */}
-                <motion.div 
-                  className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 blur-xl bg-gradient-to-r from-primary/30 to-accent/30"
-                  initial={{ opacity: 0 }}
-                  whileHover={{ opacity: 1 }}
-                  transition={{ duration: 0.5 }}
-                ></motion.div>
+                <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl bg-gradient-to-r from-primary/30 to-accent/30"></div>
 
-                <div className="relative p-6 rounded-lg border border-border bg-card/50 backdrop-blur hover:border-primary transition-all duration-300 hover:shadow-2xl cursor-pointer h-full">
+                <div className="relative p-6 rounded-lg border border-border bg-card/50 backdrop-blur hover:border-primary transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer h-full">
                   {/* Animated top border */}
                   <div className="absolute top-0 left-0 w-0 h-1 bg-gradient-to-r from-primary to-accent rounded-t-lg group-hover:w-full transition-all duration-500"></div>
 
@@ -663,7 +641,7 @@ export default function Portfolio() {
                   {/* Floating effect on hover */}
                   <div className="absolute -bottom-2 -right-2 w-20 h-20 bg-primary/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -751,13 +729,14 @@ export default function Portfolio() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {achievements.map((achievement, idx) => (
-              <motion.div
+              <div
                 key={idx}
                 className="group relative"
-                initial={{ opacity: 0, y: 60 }}
-                animate={visibleElements.has('achievements-section') ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
-                transition={{ duration: 0.7, delay: idx * 0.15, ease: [0.34, 1.56, 0.64, 1] }}
-                whileHover={{ scale: 1.05 }}
+                style={{
+                  opacity: visibleElements.has('achievements-section') ? 1 : 0,
+                  transform: visibleElements.has('achievements-section') ? 'translateY(0)' : 'translateY(60px)',
+                  transition: `all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) ${idx * 0.15}s`
+                }}
               >
                 {/* Animated background glow */}
                 <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" 
