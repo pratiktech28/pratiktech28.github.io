@@ -344,7 +344,7 @@ export default function Portfolio() {
               </h1>
 
               <p className="text-lg text-muted-foreground">
-                Infrastructure Engineer at Google | GSoC &apos;26 Contributor @gprMax | Verified by @google
+                Infrastructure Cloud Architect | GSoC &apos;26 Contributor @gprMax | Verified by @google | Official Contributor @keploy
               </p>
 
               <p className="text-base leading-relaxed text-muted-foreground">
