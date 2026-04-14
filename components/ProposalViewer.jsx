@@ -1,5 +1,4 @@
 import React from 'react';
-import { FileText, ExternalLink } from 'lucide-react';
 
 const ProposalViewer = () => {
   const previewUrl = "https://drive.google.com/file/d/1vodPBpHGcMlfoetJjca5clxAB5sShX27/preview";
@@ -18,18 +17,6 @@ const ProposalViewer = () => {
         ></iframe>
       </div>
 
-      {/* High-Contrast CTA Button */}
-      <a
-        href={fullViewUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group relative inline-flex items-center justify-center px-8 py-4 font-bold text-white transition-all duration-200 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl hover:from-blue-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 shadow-lg hover:shadow-blue-500/50"
-      >
-        <FileText className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform" />
-        <span className="text-lg">View Full Proposal</span>
-        <ExternalLink className="w-4 h-4 ml-2 opacity-70" />
-      </a>
-      
       <p className="text-slate-400 text-sm font-medium">
         Cloud-Native Infrastructure Strategy & Architecture
       </p>
