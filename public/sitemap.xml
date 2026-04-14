@@ -2,33 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://v0-portfolio-build-olive-three.vercel.app/</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>1.00</priority>
-  </url>
-
-  <url>
-    <loc>https://github.com/pratiktech28/gprmax_Containerized</loc>
-    <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://github.com/pratiktech28/gprmax_kuber_simulations</loc>
-    <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://github.com/pratiktech28/gprmax_Ascan</loc>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://github.com/pratiktech28/gprmax_material_property_check</loc>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://github.com/pratiktech28/gprmax_integration_test</loc>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://github.com/pratiktech28/gprmax_geometry_check</loc>
-    <priority>0.80</priority>
+    <priority>1.0</priority>
   </url>
 </urlset>
