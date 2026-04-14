@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
-Sitemap: https://pratiktech28.github.io/sitemap.xml
+Sitemap: https://v0-portfolio-build-olive-three.vercel.app/sitemap.xml
 Crawl-delay: 1
 
 # Disallow specific paths if needed (example)
